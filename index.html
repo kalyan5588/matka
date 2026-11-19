@@ -1,394 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>Trade With Munaaf</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalyan Matka - Demo</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-background:
-linear-gradient(135deg,#020617,#0f172a,#111827);
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-overflow:hidden;
-color:#fff;
+  font-family:Arial,sans-serif;
+  background:#080808;
+  color:white;
 }
-
-/* GLOW */
-
-.blur1,
-.blur2{
-position:fixed;
-border-radius:50%;
-filter:blur(90px);
-z-index:-1;
+header{
+  text-align:center;
+  padding:25px 15px;
+  background:#111;
+  border-bottom:1px solid #b88a24;
 }
-
-.blur1{
-width:260px;
-height:260px;
-background:#22c55e;
-top:-80px;
-left:-80px;
-opacity:0.25;
-}
-
-.blur2{
-width:260px;
-height:260px;
-background:#3b82f6;
-bottom:-100px;
-right:-100px;
-opacity:0.25;
-}
-
-/* CARD */
-
-.card{
-width:100%;
-max-width:430px;
-
-background:rgba(255,255,255,0.06);
-backdrop-filter:blur(16px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-border-radius:28px;
-
-padding:30px 24px;
-
-box-shadow:
-0 15px 50px rgba(0,0,0,0.6),
-inset 0 1px 1px rgba(255,255,255,0.08);
-
-text-align:center;
-
-position:relative;
-overflow:hidden;
-}
-
-/* TOP TAG */
-
-.top-tag{
-display:inline-block;
-padding:8px 16px;
-border-radius:50px;
-font-size:12px;
-font-weight:700;
-background:rgba(34,197,94,0.12);
-border:1px solid rgba(34,197,94,0.3);
-color:#4ade80;
-margin-bottom:18px;
-}
-
-/* LOGO */
-
-.logo-wrap{
-display:flex;
-justify-content:center;
-margin-bottom:15px;
-}
-
 .logo{
-width:90px;
-height:90px;
-border-radius:50%;
-border:3px solid #facc15;
-padding:4px;
-object-fit:cover;
-
-box-shadow:
-0 0 25px rgba(250,204,21,0.4);
+  font-size:30px;
+  font-weight:900;
+  color:#f6c453;
+  text-shadow:0 0 15px #bd8a24;
 }
-
-/* HEADING */
-
-h1{
-font-size:28px;
-font-weight:800;
-line-height:1.2;
-margin-bottom:8px;
-
-background:linear-gradient(90deg,#facc15,#ffffff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.hero{
+  text-align:center;
+  padding:65px 20px;
+  background:linear-gradient(145deg,#17120a,#050505);
 }
-
-h2{
-font-size:14px;
-font-weight:500;
-opacity:0.85;
-margin-bottom:18px;
-letter-spacing:1px;
+.hero h1{
+  color:#ffcf62;
+  font-size:35px;
+  margin-bottom:15px;
 }
-
-.desc{
-font-size:14px;
-line-height:1.7;
-opacity:0.85;
-margin-bottom:20px;
+.hero p{
+  color:#ccc;
+  line-height:1.7;
+  max-width:500px;
+  margin:auto;
 }
-
-/* TRUST */
-
-.trust-box{
-display:flex;
-justify-content:space-between;
-gap:10px;
-margin-bottom:18px;
-}
-
-.trust{
-flex:1;
-background:rgba(255,255,255,0.05);
-padding:12px 10px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.06);
-font-size:12px;
-font-weight:600;
-}
-
-/* BUTTON */
-
 .btn{
-display:block;
-width:100%;
-text-decoration:none;
-
-background:linear-gradient(90deg,#22c55e,#16a34a);
-
-padding:17px;
-border-radius:14px;
-
-font-size:16px;
-font-weight:700;
-color:#fff;
-
-margin:14px 0;
-
-box-shadow:0 10px 25px rgba(34,197,94,0.35);
-
-transition:0.3s;
+  display:inline-block;
+  margin-top:25px;
+  padding:15px 35px;
+  background:linear-gradient(90deg,#a66c08,#ffdb75);
+  color:#111;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:8px;
+  box-shadow:0 0 18px #b8862d;
 }
-
-.btn:hover{
-transform:translateY(-2px) scale(1.02);
+.section{
+  padding:35px 20px;
+  text-align:center;
 }
-
-/* FEATURES */
-
-.features{
-margin-top:15px;
-text-align:left;
+.section h2{
+  color:#f6c453;
+  margin-bottom:18px;
 }
-
-.feature{
-display:flex;
-align-items:center;
-gap:10px;
-
-background:rgba(255,255,255,0.04);
-
-padding:12px;
-border-radius:12px;
-
-margin-bottom:10px;
-
-font-size:14px;
-}
-
-/* LIVE BOX */
-
-.live{
-margin-top:18px;
-
-background:linear-gradient(90deg,
-rgba(59,130,246,0.15),
-rgba(34,197,94,0.15));
-
-padding:14px;
-border-radius:14px;
-
-border:1px solid rgba(255,255,255,0.08);
-
-font-size:13px;
-line-height:1.7;
-}
-
-/* TIMER */
-
-.timer{
-margin-top:18px;
-font-size:13px;
-font-weight:700;
-color:#facc15;
-
-animation:blink 1s infinite;
-}
-
-@keyframes blink{
-50%{
-opacity:0.5;
-}
-}
-
-/* FOOTER */
-
-.footer{
-margin-top:22px;
-font-size:12px;
-opacity:0.7;
-line-height:1.7;
-}
-
-.footer a{
-color:#38bdf8;
-text-decoration:none;
-font-weight:600;
-}
-
-.risk{
-margin-top:10px;
-font-size:11px;
-opacity:0.5;
-}
-
-/* MOBILE */
-
-@media(max-width:480px){
-
 .card{
-padding:26px 18px;
-border-radius:24px;
+  max-width:500px;
+  margin:15px auto;
+  padding:22px;
+  background:#151515;
+  border:1px solid #72551d;
+  border-radius:12px;
+  line-height:1.7;
 }
-
-h1{
-font-size:24px;
+footer{
+  background:#111;
+  padding:25px 15px;
+  text-align:center;
+  color:#aaa;
+  font-size:13px;
 }
-
-.btn{
-font-size:15px;
-padding:15px;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<div class="blur1"></div>
-<div class="blur2"></div>
+<header>
+  <div class="logo">KALYAN MATKA</div>
+  <p>Information & Awareness Demo</p>
+</header>
 
-<div class="card">
+<section class="hero">
+  <h1>Welcome To Kalyan</h1>
+  <p>
+    Welcome to our informational demo website.
+    Learn about probability, responsible choices
+    and the risks associated with betting.
+  </p>
+  <a href="#about" class="btn">KNOW MORE</a>
+</section>
 
-<div class="top-tag">
-🔥 INDIA'S FAST GROWING TRADING COMMUNITY
-</div>
+<section class="section" id="about">
+  <h2>About This Website</h2>
+  <div class="card">
+    This is an educational demonstration website.
+    It does not provide betting, gambling,
+    paid tips or money deposit services.
+  </div>
 
-<div class="logo-wrap">
-<img src="https://i.ibb.co/HThtfpR7/Whats-App-Image-2026-01-30-at-8-54-08-PM.jpg" class="logo">
-</div>
+  <h2>Important Information</h2>
+  <div class="card">
+    Gambling can cause financial losses.
+    Never risk money you cannot afford to lose.
+    Understand applicable local laws.
+  </div>
+</section>
 
-<h1>TRADE WITH MUNAAF</h1>
-
-<h2>NIFTY • BANKNIFTY • OPTION CALLS</h2>
-
-<p class="desc">
-Get daily high-probability intraday setups with
-accurate entries, targets & risk management.
-Perfect for beginners and active traders.
-</p>
-
-<div class="trust-box">
-
-<div class="trust">
-📈 5000+ Active Traders
-</div>
-
-<div class="trust">
-⚡ Live Market Updates
-</div>
-
-</div>
-
-<!-- BUTTON -->
-
-<a href="https://t.me/+2PsKWi3L1Uk3NjZl" class="btn">
-🚀 JOIN FREE TELEGRAM NOW
-</a>
-
-<!-- FEATURES -->
-
-<div class="features">
-
-<div class="feature">
-✅ 5–7 Premium Setups Daily
-</div>
-
-<div class="feature">
-✅ Exact Entry • SL • Targets
-</div>
-
-<div class="feature">
-✅ Beginner Friendly Guidance
-</div>
-
-<div class="feature">
-✅ Fast News & Live Updates
-</div>
-
-</div>
-
-<!-- LIVE -->
-
-<div class="live">
-🔥 Today's Market Opportunities Are Live <br>
-Join Now Before Free Access Ends
-</div>
-
-<!-- BUTTON -->
-
-<a href="https://t.me/+2PsKWi3L1Uk3NjZl" class="btn">
-💰 START FREE TODAY
-</a>
-
-<div class="timer">
-⏳ Limited Time Free Access
-</div>
-
-<!-- FOOTER -->
-
-<div class="footer">
-
-Powered by
-<a href="https://t.me/+3XoqJNLxYHswNTc1" target="_blank">
-AdsBuild Agency
-</a>
-
-<div class="risk">
-⚠ Market investments are subject to market risk
-</div>
-
-</div>
-
-</div>
+<footer>
+  <p>© 2026 Kalyan Matka Demo</p>
+  <p>Educational purpose only | No betting services</p>
+</footer>
 
 </body>
 </html>
